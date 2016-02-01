@@ -1,0 +1,58 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=1434120272
+account:
+  id: 1434120272
+  admin_id: 69234495
+  token: c1e203d88601a70999c9
+
+
+experiment:
+  id: 2864000477
+  start: 2015-02-26T19:00:0Z
+  stop: 2015-03-10T00:35:0Z
+
+
+goal_ids:
+  - &pageviews_id 1997540196
+  - &engagement_id 1909620714
+
+variation_ids:
+  - &variation_0 2853681434
+  - &variation_1 2857330651
+  - &variation_2 2871170420
+
+visitors:
+  *variation_0:
+    total: 12123
+  *variation_1:
+    total: 11867
+  *variation_2:
+    total: 12234
+
+conversions:
+  views_to_page:
+    goal_ids:
+      - *pageviews_id
+    counts:
+      *variation_0:
+        unique: 221
+        total: 230
+      *variation_1:
+        unique: 631
+        total: 650
+      *variation_2:
+        unique: 120
+        total: 125
+  engagement:
+    goal_ids:
+      - *engagement_id
+    counts:
+      *variation_0:
+        unique: 300
+        total: 300
+      *variation_1:
+        unique: 320
+        total: 340
+      *variation_2:
+        unique: 340
+        total: 350

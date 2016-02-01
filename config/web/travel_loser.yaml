@@ -1,0 +1,140 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=69234495
+account:
+  id: 2306051624
+  admin_id: 69234495
+  token: 72252e3ed717c30e32ef
+
+
+experiment:
+  id: 2578160075
+  start: 2015-02-26T19:00:0Z
+  stop: 2015-03-10T00:35:0Z
+
+
+goal_ids:
+  - &homeclick_id 2377150019
+  - &purchase_id 2332320316
+  - &pdpclick_id 2329450673
+  - &revenue_id 2294440851
+
+
+segment_ids:
+  - &browser 2295680475
+  - &mobile 2303341236
+  - &source 2304160739
+  - &campaign 2304290295
+  - &30days 2351530584
+  - &goldmembers 2349050313
+
+
+variation_ids:
+  - &variation_0 2571000078
+  - &variation_1 2574720081
+  - &variation_2 2572910069
+
+visitors:
+  *variation_0:
+    total: 51262
+  *variation_1:
+    total: 50983
+  *variation_2:
+    total: 51119
+
+conversions:
+  home_cta_click:
+    goal_ids:
+      - *homeclick_id
+    counts:
+      *variation_0:
+        unique: 33680
+        total: 42078
+      *variation_1:
+        unique: 33630
+        total: 47058
+      *variation_2:
+        unique: 38010
+        total: 47778
+  clicked_book_now:
+    goal_ids:
+      - *pdpclick_id
+    counts:
+      *variation_0:
+        unique: 6736
+        total: 7013
+      *variation_1:
+        unique: 6734
+        total: 7843
+      *variation_2:
+        unique: 7602
+        total: 7963
+  purchased_insurance:
+    goal_ids:
+      - *purchase_id
+      - *revenue_id
+    counts:
+      *variation_0:
+        unique: 3016
+        total: 3416
+        revenue:
+          alpha: 4
+          beta: 100
+      *variation_1:
+        unique: 2753
+        total: 3754
+        revenue:
+          alpha: 4
+          beta: 90
+      *variation_2:
+        unique: 3332
+        total: 3854
+        revenue:
+          alpha: 4
+          beta: 105
+
+segments:
+  default:
+    *browser:
+      ff: 0.35
+      ie: 0.15
+      gc: 0.40
+      safari: 0.10
+    *source:
+      search: 0.3
+      referral: 0.1
+      direct: 0.2
+      campaign: 0.4
+    *campaign:
+      christmas_offer: 0.2
+      newyear_offer: 0.2
+      none: 0.6
+    *30days:
+      true: 0.2
+      false: 0.8
+    *goldmembers:
+      true: 0.1
+      false: 0.9
+  manual:
+    *mobile:
+      true:
+        *variation_0:
+          total: 7690
+          conversions:
+            *homeclick_id: 5052
+            *purchase_id: 1231
+            *pdpclick_id: 450
+            *revenue_id: 450
+        *variation_1:
+          total: 7647
+          conversions:
+            *homeclick_id: 4299
+            *purchase_id: 859
+            *pdpclick_id: 250
+            *revenue_id: 250
+        *variation_2:
+          total: 7668
+          conversions:
+            *homeclick_id: 4413
+            *purchase_id: 959
+            *pdpclick_id: 301
+            *revenue_id: 301

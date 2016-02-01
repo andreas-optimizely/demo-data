@@ -1,0 +1,121 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=69234495
+account:
+  id: 1778340032
+  admin_id: 69234495
+  token: 72252e3ed717c30e32ef
+
+
+experiment:
+  id: 2330420857
+  start: 2015-01-13T20:50:0Z
+  stop: 2015-01-23T05:00:0Z
+
+
+goal_ids:
+  - &contact_sales 2407560022
+  - &whitepaper_download 2408350030
+  - &event_signup 2408720035
+  - &price_page 2410800003
+  - &revenue_id 1786280011
+
+
+segment_ids:
+  - &browser 1768730455
+  - &mobile 1754930514
+  - &source 1761550317
+  - &campaign 1767290152
+  - &company_small 2407490033
+  - &company_midsize 2407550034
+  - &company_large 2410970005
+  - &company_enterprise 2421290003
+  - &company_size 2401990050
+
+
+variation_ids:
+  - &variation_0 2366670790
+  - &variation_1 2367010794
+  - &variation_2 2330131104
+
+visitors:
+  *variation_0:
+    total: 51262
+  *variation_1:
+    total: 50983
+  *variation_2:
+    total: 51119
+
+segments:
+  *browser:
+    ff: 0.35
+    ie: 0.15
+    gc: 0.40
+    safari: 0.10
+  *mobile:
+    true: 0.15
+    false: 0.85
+  *source:
+    search: 0.3
+    referral: 0.1
+    direct: 0.2
+    campaign: 0.4
+  *campaign:
+    dreamforce: 0.2
+    cloud: 0.2
+    none: 0.6
+  *company_size:
+    10000+: 0.1
+    1001-10000: 0.2
+    501-1000: 0.4
+    1-500: 0.3
+
+conversions:
+  price_page:
+    goal_ids:
+      - *price_page
+    counts:
+      *variation_0:
+        unique: 33680
+        total: 42078
+      *variation_1:
+        unique: 37630
+        total: 47058
+      *variation_2:
+        unique: 38010
+        total: 47778
+  contact_sales:
+    goal_ids:
+      - *contact_sales
+    counts:
+      *variation_0:
+        unique: 6736
+        total: 7013
+      *variation_1:
+        unique: 7534
+        total: 7843
+      *variation_2:
+        unique: 7602
+        total: 7963
+  event_signup:
+    goal_ids:
+      - *event_signup
+      - *revenue_id
+    counts:
+      *variation_0:
+        unique: 3016
+        total: 3416
+        revenue:
+          alpha: 4
+          beta: 100
+      *variation_1:
+        unique: 3253
+        total: 3754
+        revenue:
+          alpha: 4
+          beta: 95
+      *variation_2:
+        unique: 3332
+        total: 3854
+        revenue:
+          alpha: 4
+          beta: 105

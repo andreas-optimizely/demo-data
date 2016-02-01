@@ -1,0 +1,106 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=69234495
+account:
+  id: 787771295
+  admin_id: 69234495
+  token: 72252e3ed717c30e32ef
+
+
+experiment:
+  id: 3252330107
+  start: 2015-08-05T12:59:0Z
+  stop: 2015-08-05T13:20:0Z
+
+
+goal_ids:
+  - &accepted_id 2500190838
+  - &rejected_id 3277140352
+  - &submitted_id 2521180287
+  - &revenue_id 787721334
+
+
+segment_ids:
+  - &browser 789520502
+  - &mobile 788320550
+  - &source 787821764
+  - &campaign 786931698
+  - &app_code 2619280560
+  - &offer_method_code 2635440136
+  - &refid 2648101572
+  - &advanced_purchase 2667360516
+
+
+variation_ids:
+  - &variation_0 3243640287
+  - &variation_1 3254620338
+
+visitors:
+  *variation_0:
+    total: 10262
+  *variation_1:
+    total: 10483
+
+conversions:
+  offer_submitted:
+    goal_ids:
+      - *submitted_id
+    counts:
+      *variation_0:
+        unique: 1262
+        total: 1562
+      *variation_1:
+        unique: 2262
+        total: 2562
+  rejected_id:
+    goal_ids:
+      - *rejected_id
+    counts:
+      *variation_0:
+        unique: 336
+        total: 713
+      *variation_1:
+        unique: 134
+        total: 243
+  accepted_offer:
+    goal_ids:
+      - *accepted_id
+      - *revenue_id
+    counts:
+      *variation_0:
+        unique: 1056
+        total: 2034
+        revenue:
+          alpha: 4
+          beta: 100
+      *variation_1:
+        unique: 2153
+        total: 3254
+        revenue:
+          alpha: 4
+          beta: 90
+
+segments:
+  default:
+    *browser:
+      ff: 0.35
+      ie: 0.15
+      gc: 0.40
+      safari: 0.10
+    *source:
+      search: 0.3
+      referral: 0.1
+      direct: 0.2
+      campaign: 0.4
+    *campaign:
+      christmas_offer: 0.2
+      newyear_offer: 0.2
+      none: 0.6
+    *refid:
+      kayak: 0.25
+      booking: 0.75
+    *advanced_purchase:
+      1day: 0.1
+      2_5_days: 0.6
+      6_10_days: 0.2
+      great_10_days: 0.1
+

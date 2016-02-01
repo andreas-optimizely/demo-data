@@ -1,0 +1,144 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=69234495
+account:
+  id: 3366880466
+  admin_id: 3151540050
+  token: 40f6ca6c8792ea7494a39a21ded218bd:0af22697
+
+
+experiment:
+  id: 3419290869
+  start: 2015-09-14T23:18:0Z
+  stop: 2015-09-22T21:48:0Z
+
+
+goal_ids:
+  - &social_shares 3419730618
+  - &newsletter_signups 3371161289
+  - &video_views 3404302266
+  - &revenue_id 3379680299
+
+
+segment_ids:
+  - &browser 3377140633
+  - &mobile 3370090732
+  - &source 3394490610
+  - &referrer 3536020296
+  - &profile 3520231253
+  - &screen 3509050146
+
+
+variation_ids:
+  - &variation_0 3395691128
+  - &variation_1 3419991072
+  - &variation_2 3525790363
+
+visitors:
+  *variation_0:
+    total: 50123
+  *variation_1:
+    total: 50934
+  *variation_2:
+    total: 49902
+
+
+conversions:
+  social_shares:
+    goal_ids:
+      - *social_shares
+    counts:
+      *variation_0:
+        unique: 13603
+        total: 20740
+      *variation_1:
+        unique: 16032
+        total: 20766
+      *variation_2:
+        unique: 13698
+        total: 27300
+  newsletter_signups:
+    goal_ids:
+      - *newsletter_signups
+    counts:
+      *variation_0:
+        unique: 4765
+        total: 4765
+      *variation_1:
+        unique: 5334
+        total: 5334
+      *variation_2:
+        unique: 3993
+        total: 3993
+  video_views:
+    goal_ids:
+      - *video_views
+      - *revenue_id
+    counts:
+      *variation_0:
+        unique: 2786
+        total: 3978
+        revenue:
+          alpha: 1
+          beta: 1
+      *variation_1:
+        unique: 3779
+        total: 4008
+        revenue:
+          alpha: 1
+          beta: 1
+      *variation_2:
+        unique: 3667
+        total: 4996
+        revenue:
+          alpha: 1
+          beta: 1
+
+
+segments:
+  default:
+    *browser:
+      ff: 0.35
+      ie: 0.15
+      gc: 0.40
+      safari: 0.10
+    *source:
+      search: 0.3
+      referral: 0.1
+      direct: 0.2
+      campaign: 0.4
+    *referrer:
+      facebook: 0.25
+      twitter: 0.25
+      google: 0.25
+      none: 0.25
+    *profile:
+      sports: 0.2
+      property: 0.2
+      finance: 0.2
+      business: 0.2
+      technology: 0.2
+    *screen:
+      phone: 0.15
+      tablet: 0.35
+      desktop: 0.5
+  manual:
+    *mobile:
+      true:
+        *variation_0:
+          total: 8156
+          conversions:
+            *social_shares: 2120
+            *newsletter_signups: 775
+            *video_views: 453
+        *variation_1:
+          total: 8165
+          conversions:
+            *social_shares: 1560
+            *newsletter_signups: 450
+            *video_views: 275
+        *variation_2:
+          total: 8150
+          conversions:
+            *social_shares: 1540
+            *newsletter_signups: 475
+            *video_views: 250

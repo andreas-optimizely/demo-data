@@ -1,0 +1,124 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=69234495
+account:
+  id: 3393120035
+  admin_id: 3151540050
+  token: 40f6ca6c8792ea7494a39a21ded218bd:0af22697
+
+
+experiment:
+  id: 3517840006
+  start: 2015-09-15T02:10:0Z
+  stop: 2015-09-22T22:12:0Z
+
+
+goal_ids:
+  - &package_purchase 3507090344
+  - &ancillary_purchase 3512780313
+  - &revenue_id 3391900330
+
+
+segment_ids:
+  - &browser 3381651158
+  - &mobile 3391480561
+  - &source 3380851652
+  - &campaign 3367781871
+
+
+variation_ids:
+  - &variation_0 3525360103
+  - &variation_1 3514420555
+  - &variation_2 3523790004
+
+
+visitors:
+  *variation_0:
+    total: 50123
+  *variation_1:
+    total: 50934
+  *variation_2:
+    total: 49902
+
+
+conversions:
+  package_purchase:
+    goal_ids:
+      - *package_purchase
+      - *revenue_id
+    counts:
+      *variation_0:
+        unique: 10024
+        total: 10034
+        revenue:
+          alpha: 5
+          beta: 50
+      *variation_1:
+        unique: 9806
+        total: 9826
+        revenue:
+          alpha: 4
+          beta: 50
+      *variation_2:
+        unique: 10051
+        total: 10056
+        revenue:
+          alpha: 5
+          beta: 50
+  ancillary_purchase:
+    goal_ids:
+      - *ancillary_purchase
+      - *revenue_id
+    counts:
+      *variation_0:
+        unique: 2516
+        total: 3016
+        revenue:
+          alpha: 5
+          beta: 6
+      *variation_1:
+        unique: 2202
+        total: 2554
+        revenue:
+          alpha: 5
+          beta: 6
+      *variation_2:
+        unique: 2504
+        total: 4039
+        revenue:
+          alpha: 5
+          beta: 6
+
+segments:
+  default:
+    *browser:
+      ff: 0.35
+      ie: 0.15
+      gc: 0.40
+      safari: 0.10
+    *source:
+      search: 0.3
+      referral: 0.1
+      direct: 0.2
+      campaign: 0.4
+    *campaign:
+      christmas_offer: 0.2
+      newyear_offer: 0.2
+      none: 0.6
+  manual:
+    *mobile:
+      true:
+        *variation_0:
+          total: 7518
+          conversions:
+            *ancillary_purchase: 378
+            *package_purchase: 1503
+        *variation_1:
+          total: 7640
+          conversions:
+            *ancillary_purchase: 204
+            *package_purchase: 910
+        *variation_2:
+          total: 7485
+          conversions:
+            *ancillary_purchase: 250
+            *package_purchase: 1005

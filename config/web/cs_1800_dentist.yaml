@@ -1,0 +1,79 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=69234495
+account:
+  id: 3151540050
+  admin_id: 3151540050
+  token: 72252e3ed717c30e32ef
+
+
+experiment:
+  id: 3136180488
+  start: 2015-07-07T19:03:0Z
+  stop: 2015-07-13T19:55:0Z
+
+
+goal_ids:
+  - &next_step 3155580014
+  - &thank_you 3158350006
+
+
+segment_ids:
+  - &browser 2007891079
+  - &mobile 2011681251
+  - &source 2015320400
+  - &campaign 1999830666
+
+
+variation_ids:
+  - &variation_0 3153610006
+  - &variation_1 3156680003
+
+visitors:
+  *variation_0:
+    total: 51262
+  *variation_1:
+    total: 50982
+
+
+conversions:
+  next_step:
+    goal_ids:
+      - *next_step
+    counts:
+      *variation_0:
+        unique: 11436
+        total: 11436
+      *variation_1:
+        unique: 14234
+        total: 14234
+  thank_you:
+    goal_ids:
+      - *thank_you
+    counts:
+      *variation_0:
+        unique: 8612
+        total: 8612
+      *variation_1:
+        unique: 10604
+        total: 10604
+
+
+segments:
+  default:
+    *browser:
+      ff: 0.35
+      ie: 0.15
+      gc: 0.40
+      safari: 0.10
+    *source:
+      search: 0.3
+      referral: 0.1
+      direct: 0.2
+      campaign: 0.4
+    *campaign:
+      seasonal_sale: 0.2
+      new_packages: 0.2
+      none: 0.6
+    *mobile:
+      true: 0.15
+      false: 0.85

@@ -1,0 +1,86 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=1434120272
+account:
+  id: 1434120272
+  admin_id: 69234495
+  token: c1e203d88601a70999c9
+
+
+experiment:
+  id: 2879440146
+  start: 2015-02-26T19:00:0Z
+  stop: 2015-03-10T00:35:0Z
+
+
+goal_ids:
+  - &pageviews_id 1909620714
+  - &engagement_id 2347800951
+
+variation_ids:
+  - &variation_0 2868920179
+  - &variation_1 2869960103
+  - &variation_2 2873740429
+  - &variation_3 2864660127
+  - &variation_4 2873090084
+  - &variation_5 2870180693
+
+visitors:
+  *variation_0:
+    total: 12123
+  *variation_1:
+    total: 11867
+  *variation_2:
+    total: 12234
+  *variation_3:
+    total: 12123
+  *variation_4:
+    total: 11867
+  *variation_5:
+    total: 12234
+
+conversions:
+  views_to_page:
+    goal_ids:
+      - *pageviews_id
+    counts:
+      *variation_0:
+        unique: 221
+        total: 230
+      *variation_1:
+        unique: 225
+        total: 230
+      *variation_2:
+        unique: 232
+        total: 230
+      *variation_3:
+        unique: 216
+        total: 230
+      *variation_4:
+        unique: 218
+        total: 230
+      *variation_5:
+        unique: 220
+        total: 230
+
+  engagement:
+    goal_ids:
+      - *engagement_id
+    counts:
+      *variation_0:
+        unique: 300
+        total: 300
+      *variation_1:
+        unique: 320
+        total: 340
+      *variation_2:
+        unique: 340
+        total: 350
+      *variation_3:
+        unique: 216
+        total: 230
+      *variation_4:
+        unique: 218
+        total: 230
+      *variation_5:
+        unique: 220
+        total: 230

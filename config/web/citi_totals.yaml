@@ -1,0 +1,114 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=69234495
+account:
+  id: 3515530328
+  admin_id: 3151540050
+  token: 40f6ca6c8792ea7494a39a21ded218bd:0af22697
+
+
+experiment:
+  id: 3515210345
+  start: 2015-09-15T01:11:0Z
+  stop: 2015-09-15T15:51:0Z
+
+
+goal_ids:
+  - &clicked_learn_more 3513570413
+  - &lead_form_submit 3513750297
+  - &phone_conversions 3522520053
+  - &revenue_id 3509970299
+
+
+segment_ids:
+  - &browser 3505100387
+  - &mobile 3513510395
+  - &source 3518250360
+  - &campaign 3518320352
+
+
+variation_ids:
+  - &variation_0 3507050381
+  - &variation_1 3516400325
+  - &variation_2 3517350301
+
+
+visitors:
+  *variation_0:
+    total: 51129
+  *variation_1:
+    total: 50852
+  *variation_2:
+    total: 50989
+
+
+conversions:
+  clicked_learn_more:
+    goal_ids:
+      - *clicked_learn_more
+    counts:
+      *variation_0:
+        unique: 6554
+        total: 6645
+      *variation_1:
+        unique: 6210
+        total: 6328
+      *variation_2:
+        unique: 7584
+        total: 7602
+  lead_form_submit:
+    goal_ids:
+      - *lead_form_submit
+    counts:
+      *variation_0:
+        unique: 2730
+        total: 3145
+      *variation_1:
+        unique: 2809
+        total: 3107
+      *variation_2:
+        unique: 2894
+        total: 3399
+  phone_conversions:
+    goal_ids:
+      - *phone_conversions
+      - *revenue_id
+    counts:
+      *variation_0:
+        unique: 4176
+        total: 4198
+        revenue:
+          alpha: 5
+          beta: 11
+      *variation_1:
+        unique: 3945
+        total: 3971
+        revenue:
+          alpha: 5
+          beta: 10.5
+      *variation_2:
+        unique: 4431
+        total: 4492
+        revenue:
+          alpha: 5
+          beta: 13.5
+
+
+segments:
+  default:
+    *browser:
+      ff: 0.35
+      ie: 0.15
+      gc: 0.40
+      safari: 0.10
+    *source:
+      search: 0.3
+      referral: 0.1
+      direct: 0.2
+      campaign: 0.4
+    *campaign:
+      dreamforce: 0.2
+      students: 0.2
+      none: 0.6
+    *mobile:
+      true: 0.15
+      false: 0.85

@@ -1,0 +1,132 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=69234495
+account:
+  id: 1373940187
+  admin_id: 1373940187
+  token: 40f6ca6c8792ea7494a39a21ded218bd:0af22697
+
+
+experiment:
+  id: 3522920003
+  start: 2015-09-15T02:28:0Z
+  stop: 2015-09-22T21:16:0Z
+
+
+goal_ids:
+  - &downloads 3514350394
+  - &contact_sales_clicks 3520600026
+  - &subscription_purchase 3521910004
+  - &revenue_id 3376460438
+
+
+segment_ids:
+  - &browser 3399920385
+  - &mobile 3364120607
+  - &source 3399670904
+  - &campaign 3398260485
+
+
+variation_ids:
+  - &variation_0 3526700004
+  - &variation_1 3518120028
+  - &variation_2 3528420006
+
+
+visitors:
+  *variation_0:
+    total: 51129
+  *variation_1:
+    total: 50852
+  *variation_2:
+    total: 50989
+
+
+conversions:
+  contact_sales_clicks:
+    goal_ids:
+      - *contact_sales_clicks
+    counts:
+      *variation_0:
+        unique: 6554
+        total: 6645
+      *variation_1:
+        unique: 5783
+        total: 5814
+      *variation_2:
+        unique: 7584
+        total: 7602
+  downloads:
+    goal_ids:
+      - *downloads
+    counts:
+      *variation_0:
+        unique: 2730
+        total: 3145
+      *variation_1:
+        unique: 3046
+        total: 3107
+      *variation_2:
+        unique: 2894
+        total: 3299
+  subscription_purchase:
+    goal_ids:
+      - *subscription_purchase
+      - *revenue_id
+    counts:
+      *variation_0:
+        unique: 4176
+        total: 4198
+        revenue:
+          alpha: 5
+          beta: 11
+      *variation_1:
+        unique: 3779
+        total: 3801
+        revenue:
+          alpha: 5
+          beta: 9.8
+      *variation_2:
+        unique: 4731
+        total: 4770
+        revenue:
+          alpha: 5
+          beta: 13.5
+
+
+segments:
+  default:
+    *browser:
+      ff: 0.35
+      ie: 0.15
+      gc: 0.40
+      safari: 0.10
+    *source:
+      search: 0.3
+      referral: 0.1
+      direct: 0.2
+      campaign: 0.4
+    *campaign:
+      dreamforce: 0.2
+      students: 0.2
+      none: 0.6
+  manual:
+    *mobile:
+      true:
+        *variation_0:
+          total: 8156
+          conversions:
+            *contact_sales_clicks: 1045
+            *downloads: 436
+            *subscription_purchase: 666
+        *variation_1:
+          total: 8165
+          conversions:
+            *contact_sales_clicks: 756
+            *downloads: 304
+            *subscription_purchase: 401
+        *variation_2:
+          total: 8150
+          conversions:
+            *contact_sales_clicks: 726
+            *downloads: 304
+            *subscription_purchase: 403

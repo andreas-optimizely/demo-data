@@ -1,0 +1,130 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=69234495
+account:
+  id: 1778340032
+  admin_id: 69234495
+  token: 72252e3ed717c30e32ef
+
+
+experiment:
+  id: 2566740257
+  start: 2015-02-26T18:28:0Z
+  stop: 2015-03-10T18:26:0Z
+
+
+goal_ids:
+  - &contact_sales 2407560022
+  - &event_signup 2627720255
+  - &price_page 2410800003
+  - &revenue_id 1786280011
+
+
+segment_ids:
+  - &browser 1768730455
+  - &mobile 1754930514
+  - &source 1761550317
+  - &campaign 1767290152
+
+
+variation_ids:
+  - &variation_0 2576250092
+  - &variation_1 2571200206
+  - &variation_2 2572720063
+
+visitors:
+  *variation_0:
+    total: 51262
+  *variation_1:
+    total: 50983
+  *variation_2:
+    total: 51119
+
+conversions:
+  price_page:
+    goal_ids:
+      - *price_page
+    counts:
+      *variation_0:
+        unique: 33680
+        total: 42078
+      *variation_1:
+        unique: 33630
+        total: 43058
+      *variation_2:
+        unique: 38010
+        total: 43778
+  contact_sales:
+    goal_ids:
+      - *contact_sales
+    counts:
+      *variation_0:
+        unique: 6736
+        total: 7013
+      *variation_1:
+        unique: 6734
+        total: 7543
+      *variation_2:
+        unique: 7602
+        total: 7563
+  event_signup:
+    goal_ids:
+      - *event_signup
+      - *revenue_id
+    counts:
+      *variation_0:
+        unique: 3016
+        total: 3416
+        revenue:
+          alpha: 4
+          beta: 100
+      *variation_1:
+        unique: 2753
+        total: 3754
+        revenue:
+          alpha: 4
+          beta: 90
+      *variation_2:
+        unique: 3332
+        total: 3854
+        revenue:
+          alpha: 4
+          beta: 105
+
+
+segments:
+  default:
+    *browser:
+      ff: 0.35
+      ie: 0.15
+      gc: 0.40
+      safari: 0.10
+    *source:
+      search: 0.3
+      referral: 0.1
+      direct: 0.2
+      campaign: 0.4
+    *campaign:
+      dreamforce: 0.2
+      linkedin: 0.2
+      none: 0.6
+  manual:
+    *mobile:
+      true:
+        *variation_0:
+          total: 7690
+          conversions:
+            *price_page: 5052
+            *contact_sales: 1231
+            *event_signup: 450
+        *variation_1:
+          total: 7647
+          conversions:
+            *price_page: 4299
+            *contact_sales: 859
+            *event_signup: 250
+        *variation_2:
+          total: 7668
+          conversions:
+            *price_page: 4413
+            *contact_sales: 959
+            *event_signup: 301

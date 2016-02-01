@@ -1,0 +1,76 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=69234495
+account:
+  id: 3529880650
+  admin_id: 3151540050
+  token: 40f6ca6c8792ea7494a39a21ded218bd:0af22697
+
+
+experiment:
+  id: 3512660244
+  start: 2015-09-15T19:40:0Z
+  stop: 2015-09-15T19:50:0Z
+
+
+goal_ids:
+  - &custom_event_name 3534130989
+  - &revenue_id 3521330957
+
+
+segment_ids:
+  - &browser 3533890486
+  - &mobile 3537680438
+  - &source 3525610491
+  - &campaign 3530010468
+
+
+variation_ids:
+  - &variation_0 3517980238
+  - &variation_1 3519670293
+
+
+visitors:
+  *variation_0:
+    total: 1023
+  *variation_1:
+    total: 1296
+
+
+conversions:
+  custom_event_name:
+    goal_ids:
+      - *custom_event_name
+      - *revenue_id
+    counts:
+      *variation_0:
+        unique: 102
+        total: 152
+        revenue:
+          alpha: 5
+          beta: 50
+      *variation_1:
+        unique: 195
+        total: 201
+        revenue:
+          alpha: 5
+          beta: 50
+
+segments:
+  default:
+    *browser:
+      ff: 0.35
+      ie: 0.15
+      gc: 0.40
+      safari: 0.10
+    *source:
+      search: 0.3
+      referral: 0.1
+      direct: 0.2
+      campaign: 0.4
+    *campaign:
+      christmas_offer: 0.2
+      newyear_offer: 0.2
+      none: 0.6
+    *mobile:
+      true: 0.15
+      false: 0.85

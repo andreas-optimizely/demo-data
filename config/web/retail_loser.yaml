@@ -1,0 +1,130 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=69234495
+account:
+  id: 2030050598
+  admin_id: 69234495
+  token: 72252e3ed717c30e32ef
+
+
+experiment:
+  id: 2574440130
+  start: 2015-02-26T19:04:0Z
+  stop: 2015-03-12T21:42:0Z
+
+
+goal_ids:
+  - &purchase_complete 2422870260
+  - &clicked_homepage_cta 2437370536
+  - &add_to_cart 2451541307
+  - &revenue_id 2028790468
+
+
+segment_ids:
+  - &browser 2007891079
+  - &mobile 2011681251
+  - &source 2015320400
+  - &campaign 1999830666
+
+
+variation_ids:
+  - &variation_0 2571610118
+  - &variation_1 2566940185
+  - &variation_2 2568340306
+
+visitors:
+  *variation_0:
+    total: 51262
+  *variation_1:
+    total: 50983
+  *variation_2:
+    total: 51119
+
+
+conversions:
+  clicked_homepage_cta:
+    goal_ids:
+      - *clicked_homepage_cta
+    counts:
+      *variation_0:
+        unique: 33680
+        total: 42078
+      *variation_1:
+        unique: 33630
+        total: 43058
+      *variation_2:
+        unique: 38010
+        total: 43778
+  add_to_cart:
+    goal_ids:
+      - *add_to_cart
+    counts:
+      *variation_0:
+        unique: 6736
+        total: 7013
+      *variation_1:
+        unique: 6734
+        total: 7543
+      *variation_2:
+        unique: 7602
+        total: 7563
+  purchase_complete:
+    goal_ids:
+      - *purchase_complete
+      - *revenue_id
+    counts:
+      *variation_0:
+        unique: 3016
+        total: 3416
+        revenue:
+          alpha: 4
+          beta: 100
+      *variation_1:
+        unique: 2753
+        total: 3754
+        revenue:
+          alpha: 4
+          beta: 90
+      *variation_2:
+        unique: 3332
+        total: 3854
+        revenue:
+          alpha: 4
+          beta: 105
+
+segments:
+  default:
+    *browser:
+      ff: 0.35
+      ie: 0.15
+      gc: 0.40
+      safari: 0.10
+    *source:
+      search: 0.3
+      referral: 0.1
+      direct: 0.2
+      campaign: 0.4
+    *campaign:
+      seasonal_sale: 0.2
+      new_merchandise: 0.2
+      none: 0.6
+  manual:
+    *mobile:
+      true:
+        *variation_0:
+          total: 7690
+          conversions:
+            *clicked_homepage_cta: 5052
+            *add_to_cart: 1231
+            *purchase_complete: 450
+        *variation_1:
+          total: 7647
+          conversions:
+            *clicked_homepage_cta: 4299
+            *add_to_cart: 859
+            *purchase_complete: 250
+        *variation_2:
+          total: 7668
+          conversions:
+            *clicked_homepage_cta: 4413
+            *add_to_cart: 959
+            *purchase_complete: 301

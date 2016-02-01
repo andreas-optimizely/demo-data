@@ -1,0 +1,52 @@
+account:
+  id: 3151540050
+  admin_id: 3151540050
+  token: 72252e3ed717c30e32ef
+
+
+experiment:
+  id: 3122870708
+  start: 2015-07-07T19:03:0Z
+  stop: 2015-07-21T22:30:0Z
+
+
+goal_ids:
+  - 3142460835
+
+
+segment_ids:
+  - 3120450780
+
+
+variation_ids:
+  - 3156850004
+  - 3156950003
+
+
+visitors:
+  3156850004:
+    total: 5126
+  3156950003:
+    total: 5098
+
+
+conversions:
+  d_s_register:
+    goal_ids:
+      - 3142460835
+    counts:
+      3156850004:
+        unique: 468
+        total: 468
+      3156950003:
+        unique: 763
+        total: 763
+
+
+segments:
+  default:
+    3120450780:
+      ff: 0.35
+      ie: 0.15
+      gc: 0.40
+      safari: 0.10

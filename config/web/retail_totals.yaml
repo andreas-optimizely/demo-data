@@ -1,0 +1,130 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=69234495
+account:
+  id: 3392151234
+  admin_id: 3151540050
+  token: 40f6ca6c8792ea7494a39a21ded218bd:0af22697
+
+
+experiment:
+  id: 3412080079
+  start: 2015-09-14T23:18:0Z
+  stop: 2015-09-15T20:15:0Z
+
+
+goal_ids:
+  - &added_to_cart 3408181639
+  - &completed_purchase 3420120415
+  - &confirmed_member_signup 3421440565
+  - &revenue_id 3386240519
+
+
+segment_ids:
+  - &browser 3369650483
+  - &mobile 3382301493
+  - &source 3399350817
+  - &campaign 3387500472
+
+
+variation_ids:
+  - &variation_0 3422370120
+  - &variation_1 3401720455
+  - &variation_2 3408701095
+
+visitors:
+  *variation_0:
+    total: 54374
+  *variation_1:
+    total: 54438
+  *variation_2:
+    total: 54338
+
+
+conversions:
+  completed_purchase:
+    goal_ids:
+      - *completed_purchase
+      - *revenue_id
+    counts:
+      *variation_0:
+        unique: 1264
+        total: 1421
+        revenue:
+          alpha: 5
+          beta: 24
+      *variation_1:
+        unique: 645
+        total: 945
+        revenue:
+          alpha: 5
+          beta: 24
+      *variation_2:
+        unique: 1301
+        total: 2598
+        revenue:
+          alpha: 5
+          beta: 24
+  added_to_cart:
+    goal_ids:
+      - *added_to_cart
+    counts:
+      *variation_0:
+        unique: 4871
+        total: 7106
+      *variation_1:
+        unique: 2742
+        total: 4003
+      *variation_2:
+        unique: 4811
+        total: 9580
+  confirmed_member_signup:
+    goal_ids:
+      - *confirmed_member_signup
+    counts:
+      *variation_0:
+        unique: 609
+        total: 609
+      *variation_1:
+        unique: 1033
+        total: 1033
+      *variation_2:
+        unique: 1248
+        total: 1248
+
+segments:
+  default:
+    *browser:
+      ff: 0.35
+      ie: 0.15
+      gc: 0.40
+      safari: 0.10
+    *source:
+      search: 0.3
+      referral: 0.1
+      direct: 0.2
+      campaign: 0.4
+    *campaign:
+      seasonal_sale: 0.2
+      new_merchandise: 0.2
+      none: 0.6
+  manual:
+    *mobile:
+      true:
+        *variation_0:
+          total: 8156
+          conversions:
+            *added_to_cart: 731
+            *completed_purchase: 190
+            *confirmed_member_signup: 91
+        *variation_1:
+          total: 8165
+          conversions:
+            *added_to_cart: 274
+            *completed_purchase: 64
+            *confirmed_member_signup: 81
+        *variation_2:
+          total: 8150
+          conversions:
+            *added_to_cart: 481
+            *completed_purchase: 130
+            *confirmed_member_signup: 76

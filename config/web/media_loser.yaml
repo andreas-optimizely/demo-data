@@ -1,0 +1,138 @@
+# Token if POSTing (use admin_id for this request)
+# https://www.optimizely.com/admin/account_token?account_id=69234495
+account:
+  id: 2030830277
+  admin_id: 69234495
+  token: 72252e3ed717c30e32ef
+
+
+experiment:
+  id: 2578150007
+  start: 2015-02-26T18:52:0Z
+  stop: 2015-03-11T19:23:0Z
+
+
+goal_ids:
+  - &engagement 2020760333
+  - &video_view_completion 2404872356
+  - &social_share 2640890295
+  - &newsletter_signup 2452581558
+
+
+segment_ids:
+  - &browser 2011611620
+  - &mobile 2005671367
+  - &source 2006321293
+  - &campaign 1994801952
+
+
+variation_ids:
+  - &variation_0 2564370017
+  - &variation_1 2575870003
+  - &variation_2 2580580003
+
+
+visitors:
+  *variation_0:
+    total: 51262
+  *variation_1:
+    total: 50983
+  *variation_2:
+    total: 51119
+
+
+conversions:
+  engagement:
+    goal_ids:
+      - *engagement
+    counts:
+      *variation_0:
+        unique: 33680
+        total: 42078
+      *variation_1:
+        unique: 33630
+        total: 43058
+      *variation_2:
+        unique: 38010
+        total: 43778
+  video_view_completion:
+    goal_ids:
+      - *video_view_completion
+    counts:
+      *variation_0:
+        unique: 6736
+        total: 7013
+      *variation_1:
+        unique: 6734
+        total: 7543
+      *variation_2:
+        unique: 7602
+        total: 7563
+  social_share:
+    goal_ids:
+      - *social_share
+    counts:
+      *variation_0:
+        unique: 3016
+        total: 3416
+      *variation_1:
+        unique: 2753
+        total: 3754
+      *variation_2:
+        unique: 3332
+        total: 3854
+  newsletter_signup:
+    goal_ids:
+      - *newsletter_signup
+    counts:
+      *variation_0:
+        unique: 1506
+        total: 3416
+      *variation_1:
+        unique: 1121
+        total: 3754
+      *variation_2:
+        unique: 1790
+        total: 3854
+
+
+segments:
+  default:
+    *browser:
+      ff: 0.35
+      ie: 0.15
+      gc: 0.40
+      safari: 0.10
+    *source:
+      search: 0.3
+      referral: 0.1
+      direct: 0.2
+      campaign: 0.4
+    *campaign:
+      social_promo: 0.2
+      newsletter_email: 0.2
+      none: 0.6
+  manual:
+    *mobile:
+      true:
+        *variation_0:
+          total: 7690
+          conversions:
+            *engagement: 5052
+            *social_share: 1231
+            *video_view_completion: 450
+            *newsletter_signup: 450
+        *variation_1:
+          total: 7647
+          conversions:
+            *engagement: 4299
+            *social_share: 859
+            *video_view_completion: 250
+            *newsletter_signup: 250
+        *variation_2:
+          total: 7668
+          conversions:
+            *engagement: 4413
+            *social_share: 959
+            *video_view_completion: 301
+            *newsletter_signup: 301
